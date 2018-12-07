@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="34px" height="33px" viewBox="0 0 34 33" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.4 (67378) - http://www.bohemiancoding.com/sketch -->
+    <title>arrow_icon</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Desktop-Dashboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="0504" transform="translate(-15.000000, -94.000000)" stroke="#373737">
+            <g id="menu_bar_long">
+                <g id="arrow_icon" transform="translate(16.000000, 94.500000)">
+                    <circle id="Oval" fill="#FFFFFF" fill-rule="nonzero" cx="16" cy="16" r="16"></circle>
+                    <g id="icon/arrow/left" transform="translate(12.000000, 8.000000)" fill="#373737" stroke-width="0.2">
+                        <path d="M-3,4.48618785 C-3,4.42725569 -2.98766054,4.36586895 -2.96298124,4.30202578 C-2.93830195,4.23818262 -2.90128356,4.18170681 -2.85192498,4.13259669 C-2.7532078,4.04419845 -2.63474896,4 -2.49654492,4 C-2.35834087,4 -2.23988203,4.04419845 -2.14116486,4.13259669 L4.55182626,10.7918969 L11.1411649,4.23572744 C11.239882,4.13750718 11.3583409,4.08839779 11.4965449,4.08839779 C11.634749,4.08839779 11.7532078,4.13750718 11.851925,4.23572744 C11.9506422,4.3339477 12,4.45181024 12,4.5893186 C12,4.72682696 11.9506422,4.8446895 11.851925,4.94290976 L4.90720632,11.8526703 C4.80848914,11.9508906 4.69003031,12 4.55182626,12 C4.41362221,12 4.29516338,11.9508906 4.1964462,11.8526703 L-2.85192498,4.85451197 C-2.90128356,4.80540184 -2.93830195,4.74892604 -2.96298124,4.68508287 C-2.98766054,4.62123971 -3,4.55494203 -3,4.48618785 Z" id="Arrow-down---simple-line-icons-Copy-4" transform="translate(4.500000, 8.000000) scale(-1, 1) rotate(90.000000) translate(-4.500000, -8.000000) "></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

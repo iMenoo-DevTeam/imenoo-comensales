@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="34px" height="34px" viewBox="0 0 34 34" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.2 (67145) - http://www.bohemiancoding.com/sketch -->
+    <title>profile</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="24" height="24"></rect>
+    </defs>
+    <g id="Desktop-Dashboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="0101" transform="translate(-616.000000, -15.000000)">
+            <g id="navbar">
+                <g id="profile_component" transform="translate(616.000000, 12.000000)">
+                    <g id="profile" transform="translate(1.000000, 4.000000)">
+                        <g id="Magnifier---simple-line-icons" transform="translate(4.000000, 3.000000)">
+                            <mask id="mask-2" fill="white">
+                                <use xlink:href="#path-1"></use>
+                            </mask>
+                            <use id="Mask" fill="#FFFFFF" fill-rule="nonzero" xlink:href="#path-1"></use>
+                            <circle id="Oval" stroke="#9EA3A3" fill-rule="nonzero" mask="url(#mask-2)" cx="12" cy="8" r="4.5"></circle>
+                            <path d="M21.2282567,20.0110378 C19.2666676,16.9946558 15.8662722,15 12,15 C8.13588657,15 4.73712984,16.9924289 2.77503052,20.005986" id="Oval" stroke="#9EA3A3" fill-rule="nonzero" mask="url(#mask-2)"></path>
+                        </g>
+                        <circle id="Oval" stroke="#9EA3A3" fill-rule="nonzero" cx="16" cy="16" r="16"></circle>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
