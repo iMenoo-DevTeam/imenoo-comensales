@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.2 (67145) - http://www.bohemiancoding.com/sketch -->
+    <title>plus</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Desktop-Dashboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="plusIcon" transform="translate(-856.000000, -351.000000)" fill="#32BBBC">
+            <g id="new_menu" transform="translate(760.000000, 248.000000)">
+                <g id="plus" transform="translate(96.000000, 103.000000)">
+                    <rect id="Rectangle" x="0" y="15" width="32" height="2" rx="1"></rect>
+                    <rect id="Rectangle" x="15" y="0" width="2" height="32" rx="1"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,10 @@
+@font-face {
+  font-family: brand;
+  src: url("/assets/fonts/regular.otf") format("opentype");
+}
+
+:root {
+  --main-font: 'Work Sans', sans-serif;
+  --color-text-dark: #4A4A4A;
+  --color-text-light: #FFFFFF;
+}

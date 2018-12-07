@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="26px" height="20px" viewBox="0 0 26 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.2 (67145) - http://www.bohemiancoding.com/sketch -->
+    <title>subscription_icon</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Desktop-Dashboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="0101" transform="translate(-16.000000, -530.000000)" fill="#FFFFFF" stroke="#979797">
+            <g id="menu_bar_long">
+                <g id="subscription_icon" transform="translate(17.000000, 531.000000)">
+                    <path d="M22,0 L2,0 C0.897,0 0,0.897 0,2 L0,16 C0,17.103 0.897,18 2,18 L22,18 C23.103,18 24,17.103 24,16 L24,2 C24,0.897 23.103,0 22,0 L22,0 Z" id="Path" stroke-width="0.827586207"></path>
+                    <path d="M22,8.41666667 C22,8.73866667 21.7312,9 21.4,9 L16.6,9 C16.2688,9 16,8.73866667 16,8.41666667 L16,2.58333333 C16,2.26133333 16.2688,2 16.6,2 L21.4,2 C21.7312,2 22,2.26133333 22,2.58333333 L22,8.41666667 Z" id="Path"></path>
+                    <path d="M12.3888889,16 L2.61111111,16 C2.27377778,16 2,15.552 2,15 C2,14.448 2.27377778,14 2.61111111,14 L12.3888889,14 C12.7262222,14 13,14.448 13,15 C13,15.552 12.7262222,16 12.3888889,16 L12.3888889,16 Z" id="Path"></path>
+                    <path d="M2.6,10 L7.4,10 C7.7312,10 8,10.448 8,11 C8,11.552 7.7312,12 7.4,12 L2.6,12 C2.2688,12 2,11.552 2,11 C2,10.448 2.2688,10 2.6,10 L2.6,10 Z" id="Path"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

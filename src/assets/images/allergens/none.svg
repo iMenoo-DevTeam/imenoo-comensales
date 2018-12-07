@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.4 (67378) - http://www.bohemiancoding.com/sketch -->
+    <title>fish</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0.00320360405 0.00134020619 24.9819752 0.00134020619 24.9819752 21.9999485 0.00320360405 21.9999485"></polygon>
+    </defs>
+    <g id="Desktop-Dashboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.400000006">
+        <g id="0110" transform="translate(-295.000000, -729.000000)">
+            <g id="Alérgenos" transform="translate(104.000000, 530.000000)">
+                <g id="Pescado-Copy" transform="translate(170.000000, 189.000000)">
+                    <g id="Group">
+                        <g id="fish" transform="translate(18.983607, 10.000000)">
+                            <mask id="mask-2" fill="white">
+                                <use xlink:href="#path-1"></use>
+                            </mask>
+                            <g id="Clip-2"></g>
+                            <circle id="Oval" stroke="#000000" fill-rule="nonzero" mask="url(#mask-2)" cx="13" cy="11" r="10"></circle>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

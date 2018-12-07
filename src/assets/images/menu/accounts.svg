@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.4 (67378) - http://www.bohemiancoding.com/sketch -->
+    <title>credit-card</title>
+    <desc>Created with Sketch.</desc>
+    <g id="credit-card" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group" transform="translate(1.000000, 4.000000)" stroke="#000000">
+            <g id="Group-2">
+                <path d="M0.0356826836,14 L0.0356826836,2 C0.0356826836,0.8954305 0.931113184,2.02906125e-16 2.03568268,0 L20.0373493,0 C21.1419188,-2.02906125e-16 22.0373493,0.8954305 22.0373493,2 L22.0373493,14 C22.0373493,15.1045695 21.1419188,16 20.0373493,16 L2.03568268,16 C0.931113184,16 0.0356826836,15.1045695 0.0356826836,14 Z" id="Path-18"></path>
+                <path d="M0.277714614,6 L21.8991513,6" id="Path-19"></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,20 @@
+<div class="header-landing" [style.background-image]="'url('+restaurant.bg_image+')'">
+    <div class="logo-wrapper">
+      <img *ngIf="restaurant.logo" [src]="restaurant.logo" alt="">
+      <h1 *ngIf="!restaurant.logo">{{restaurant.name}}</h1>
+    </div>
+</div>
+<div class="header-bar">
+  <div class="search-wrapper">
+      <img src="assets/images/header/search.svg" alt="">
+    <p>Buscar</p>
+  </div>
+  <div class="language-wrapper" *ngIf="defaultLanguage">
+      <img class="flag" src="assets/images/flags/{{defaultLanguage}}.svg">
+      <img class="arrowDown" src="assets/images/header/arrowDown.svg">
+  </div>
+  <div class="filter-wrapper">
+    <img src="assets/images/header/filter.svg" alt="">
+    <p>Filtrar</p>
+  </div>
+</div>

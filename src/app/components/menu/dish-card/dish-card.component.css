@@ -1,0 +1,24 @@
+.dish-info {
+  padding-right: 20px;
+  flex-grow: 2;
+}
+
+.dish-info h4 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.dish-info p {
+  font-size: 14px;
+  font-weight: 200;
+  margin: 20px 0 5px;
+}
+
+.dish-info span {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.dish-info span.error {
+  color: #FF8377;
+}
