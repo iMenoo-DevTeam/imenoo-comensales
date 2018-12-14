@@ -57,7 +57,7 @@ export class MenuComponent implements OnInit {
     newRestaurant.menu = newRestaurant.menu.map((menuElem) => {
       const newMenu = { title: menuElem.translations[this.defaultLanguage], sections: [] };
       newMenu.sections = menuElem.sections.map((sectionElem) => {
-        const newSection = { title: sectionElem.translations[this.defaultLanguage], dishes: [] };
+        const newSection = { title: sectionElem.translations[this.defaultLanguage], dishes: [], url: sectionElem.translations[this.defaultLanguage].replace(/ /g, "-").toLowerCase() };
         sectionElem.dishes.forEach((dishElem) => {
           const newDish = {
             title: dishElem.translations[this.defaultLanguage].title,
@@ -68,6 +68,7 @@ export class MenuComponent implements OnInit {
             active: dishElem.active,
             flagAllergens: true,
             flagDiets: true,
+            image: dishElem.image,
           };
           this.allergensFilter.forEach(allergen => { if(newDish.allergens[allergen]) newDish.flagAllergens = false; })
           this.dietsFilter.forEach(diet => { if(!newDish.diets[diet]) newDish.flagDiets = false; })

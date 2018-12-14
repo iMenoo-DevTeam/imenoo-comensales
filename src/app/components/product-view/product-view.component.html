@@ -1,3 +1,80 @@
-<p>
-  product-view works!
-</p>
+<div class="product-view">
+    <img src="assets/images/header/cancel.svg" class="close-icon" (click)="closeProductView()">
+  <div class="image-wrapper" *ngIf="dish.image != undefined">
+    <img [src]="dish.image" alt="">
+  </div>
+  <div class="text-wrapper">
+      <h3>{{dish.title}}</h3>
+      <h4>{{section.title}}</h4>
+      <p>{{dish.description}}</p>
+      <div class="allergens">
+        <p>Contiene:</p>
+        <div class="allergens-items-wrapper">
+          <div class="allergen-item" *ngIf="dish.allergens.almond">
+            <img src="../../../assets/images/allergens/almond.1.svg" alt="">
+            <span>{{allergens.almond.title}}</span>
+          </div>
+          <div class="allergen-item" *ngIf="dish.allergens.celery">
+            <img src="../../../assets/images/allergens/celery.1.svg" alt="">
+            <span>{{allergens.celery.title}}</span>
+          </div>
+          <div class="allergen-item" *ngIf="dish.allergens.soybean">
+            <img src="../../../assets/images/allergens/soybean.1.svg" alt="">
+            <span>{{allergens.soybean.title}}</span>
+          </div>
+          <div class="allergen-item" *ngIf="dish.allergens.sulfates">
+            <img src="../../../assets/images/allergens/sulfates.1.svg" alt="">
+            <span>{{allergens.sulfates.title}}</span>
+          </div>
+          <div class="allergen-item" *ngIf="dish.allergens.egg">
+            <img src="../../../assets/images/allergens/egg.1.svg" alt="">
+            <span>{{allergens.egg.title}}</span>
+          </div>
+          <div class="allergen-item" *ngIf="dish.allergens.milk">
+            <img src="../../../assets/images/allergens/milk.1.svg" alt="">
+            <span>{{allergens.milk.title}}</span>
+          </div>
+          <div class="allergen-item" *ngIf="dish.allergens.gluten">
+            <img src="../../../assets/images/allergens/gluten.1.svg" alt="">
+            <span>{{allergens.gluten.title}}</span>
+          </div>
+          <div class="allergen-item" *ngIf="dish.allergens.peanut">
+            <img src="../../../assets/images/allergens/peanut.1.svg" alt="">
+            <span>{{allergens.peanut.title}}</span>
+          </div>
+          <div class="allergen-item" *ngIf="dish.allergens.sesame">
+            <img src="../../../assets/images/allergens/sesame.1.svg" alt="">
+            <span>{{allergens.sesame.title}}</span>
+          </div>
+          <div class="allergen-item" *ngIf="dish.allergens.mustard">
+            <img src="../../../assets/images/allergens/mustard.1.svg" alt="">
+            <span>{{allergens.mustard.title}}</span>
+          </div>
+          <div class="allergen-item" *ngIf="dish.allergens.mollusc">
+            <img src="../../../assets/images/allergens/mollusc.1.svg" alt="">
+            <span>{{allergens.mollusc.title}}</span>
+          </div>
+          <div class="allergen-item" *ngIf="dish.allergens.lupin">
+            <img src="../../../assets/images/allergens/lupin.1.svg" alt="">
+            <span>{{allergens.lupin.title}}</span>
+          </div>
+          <div class="allergen-item" *ngIf="dish.allergens.crustaceans">
+            <img src="../../../assets/images/allergens/crustaceans.1.svg" alt="">
+            <span>{{allergens.crustaceans.title}}</span>
+          </div>
+          <div class="allergen-item" *ngIf="dish.allergens.fish">
+            <img src="../../../assets/images/allergens/fish.1.svg" alt="">
+            <span>{{allergens.fish.title}}</span>
+          </div>
+        </div>
+    
+      </div>
+      <div class="able-for">
+        <p>Apto para:</p>
+        <span *ngIf="dish.diets.vegetarian">Vegetarianos</span>
+        <br>
+        <span *ngIf="dish.diets.vegan">Veganos</span>
+      </div>
+  </div>
+  
+</div>

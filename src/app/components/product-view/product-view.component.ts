@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-product-view',
@@ -6,10 +6,33 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./product-view.component.css']
 })
 export class ProductViewComponent implements OnInit {
-
+  @Input() dish: any;
+  @Input() section: any;
+  @Output() closeView: EventEmitter<any> = new EventEmitter();
+  allergens = {  
+    almond: { title: 'Almendras' },
+    celery: { title: 'Cereales' },
+    soybean: { title: 'Soja' },
+    sulfates: { title: 'Sulfatos' },
+    egg: { title: 'Huevo' },
+    milk: { title: 'Leche' },
+    gluten: { title: 'Gluten' },
+    peanut: { title: 'Maní' },
+    sesame: { title: 'Sésamo' },
+    mustard: { title: 'Mostaza' },
+    mollusc: { title: 'Molusco' },
+    lupin: { title: 'Lupus' },
+    crustaceans: { title: 'Crustáceos' },
+    fish: { title: 'Pescado' },
+  }
   constructor() { }
 
   ngOnInit() {
+    console.log(this.dish)
+  }
+
+  closeProductView() {
+    this.closeView.emit('hide');
   }
 
 }

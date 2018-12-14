@@ -4,6 +4,6 @@
     <p>{{dish.description}}</p>
     <span>{{dish.price}}</span>
 </div>
+<app-product-view [@showAnimation]="showFullInfo" (closeView)="closeView($event)" [dish]="dish" [section]="section"></app-product-view>
 
-<app-product-view [@showAnimation]="showAnimation" (hideProduct)="hideProduct"></app-product-view>
 
