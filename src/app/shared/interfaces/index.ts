@@ -33,6 +33,7 @@ export class Restaurant {
   phone: Number;
   url: String;
   next_payment: Date;
+  logo: String;
 }
 
 export class Menu {

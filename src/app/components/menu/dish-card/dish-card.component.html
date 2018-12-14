@@ -1,7 +1,9 @@
-<div class="dish-info">
+<div class="dish-info" (click)="showFullDish()">
     <h4>{{dish.title}}</h4>
     <span class="error" *ngIf="!dish.active">Producto Agotado</span>
     <p>{{dish.description}}</p>
     <span>{{dish.price}}</span>
 </div>
+
+<app-product-view [@showAnimation]="showAnimation" (hideProduct)="hideProduct"></app-product-view>
 

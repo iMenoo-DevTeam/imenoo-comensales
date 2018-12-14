@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -10,6 +11,7 @@ import { DishCardComponent } from './components/menu/dish-card/dish-card.compone
 import { LandingHeaderComponent } from './components/menu/landing-header/landing-header.component';
 import { FooterComponent } from './components/menu/footer/footer.component';
 import { SectionsNavComponent } from './components/menu/sections-nav/sections-nav.component';
+import { ProductViewComponent } from './components/product-view/product-view.component';
 
 @NgModule({
   declarations: [
@@ -19,10 +21,12 @@ import { SectionsNavComponent } from './components/menu/sections-nav/sections-na
     DishCardComponent,
     LandingHeaderComponent,
     FooterComponent,
-    SectionsNavComponent
+    SectionsNavComponent,
+    ProductViewComponent,
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule
   ],

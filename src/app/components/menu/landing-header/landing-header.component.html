@@ -4,17 +4,62 @@
       <h1 *ngIf="!restaurant.logo">{{restaurant.name}}</h1>
     </div>
 </div>
-<div class="header-bar">
-  <div class="search-wrapper">
-      <img src="assets/images/header/search.svg" alt="">
-    <p>Buscar</p>
+<div class="header-bar" [@showAnimation]="headerGrow">
+  <div class="landing-header-bar-wrapper fadeIn" *ngIf="landingBar">
+    <div class="search-wrapper">
+        <img src="assets/images/header/search.svg" alt="">
+      <p>Buscar</p>
+    </div>
+    <div class="language-wrapper" *ngIf="defaultLanguage" (click)="toggleLanguageSelector()">
+        <img class="flag" src="assets/images/flags/{{defaultLanguage}}.svg">
+        <img class="arrowDown" src="assets/images/header/arrowDown.svg">
+    </div>
+    <div class="list-languages" [@showAnimation]="showLanguages">
+        <p>Idioma: </p>
+        <div class="lang-item" *ngFor="let language of availableLanguages">
+            <img class="flag" src="assets/images/flags/{{language}}.svg" (click)="newLanguageSelected(language)">
+        </div>
+    </div>
+    <div class="filter-wrapper" (click)="showFilterSelector()">
+      <img src="assets/images/header/filter.svg" alt="">
+      <p>Filtrar</p>
+    </div>
   </div>
-  <div class="language-wrapper" *ngIf="defaultLanguage">
-      <img class="flag" src="assets/images/flags/{{defaultLanguage}}.svg">
-      <img class="arrowDown" src="assets/images/header/arrowDown.svg">
+  <div class="sections-wrapper fadeIn" *ngIf="sectionsBar">
+      <h3>{{restaurant.name}}</h3>
+      <ul>
+        <li class="section-item" [ngClass]="{'active': section.activeSection}" *ngFor="let section of sections">
+          {{section.title}}
+        </li>
+      </ul>
+    </div>
+
+</div>
+
+<div class="filter-items-wrapper" [@showAnimation]="showFilter">
+  <div class="header-pop-up">
+      <img src="assets/images/header/cancel.svg" alt="" id="close-icon" (click)="hideFilterSelector()">
+      <img src="assets/images/header/filter.svg" alt="" id="filter-icon">
+      <p>Filtrar por</p>
   </div>
-  <div class="filter-wrapper">
-    <img src="assets/images/header/filter.svg" alt="">
-    <p>Filtrar</p>
+  <div class="section-wrapper">
+    <h4>Alérgenos</h4>
+    <p>No mostrar productos que contengan:</p>
+    <div class="items-wrapper">
+      <div class="item" *ngFor="let allergen of allergens">
+        <span>{{allergen.title}}</span>
+        <input type="checkbox" (change)="addFilterAllergen($event, allergen.value)">
+      </div>
+    </div>
   </div>
+  <div class="section-wrapper">
+      <h4>Estilo de Dieta</h4>
+      <p>Solo mostrar prodcutos que sean aptos para:</p>
+      <div class="items-wrapper">
+        <div class="item" *ngFor="let diet of dietary">
+          <span>{{diet.title}}</span>
+          <input type="checkbox" (change)="addFilterDiet($event, diet.value)">
+        </div>
+      </div>
+    </div>
 </div>

@@ -3,17 +3,24 @@
 </div>
 
 <div class="content-wrapper" *ngIf="restaurant">
-    <app-landing-header [restaurant]="restaurant" [defaultLanguage]="defaultLanguage"></app-landing-header>
+    <app-landing-header 
+        (filters)="setFilters($event)" 
+        (newLanguage)="setNewLanguage($event)" 
+        [restaurant]="restaurant" 
+        [defaultLanguage]="defaultLanguage" 
+        [availableLanguages]="availableLanguages"
+        [@showAnimation]="showHeader">
+    </app-landing-header>
     <div class="menu-wrapper">
         <div class="section-wrapper" *ngFor="let section of restaurant.menu[0].sections">
           <div *ngIf="section.dishes.length > 0">
               <h3>{{section.title}}</h3>
-              <div class="dish-wrapper" *ngFor="let dish of section.dishes">
+              <div class="dish-wrapper" *ngFor="let dish of section.dishes; let i=index">
                   <app-dish-card [dish]="dish"></app-dish-card>
               </div>
           </div>     
         </div>
     </div> 
-    <app-footer></app-footer>
+    <app-footer [restaurant]="restaurant"></app-footer>
 </div>
 
