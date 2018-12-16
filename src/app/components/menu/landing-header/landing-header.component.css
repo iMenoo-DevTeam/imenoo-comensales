@@ -52,6 +52,7 @@
   overflow-x: scroll;
   padding: 20px 0;
   width: auto;
+  scroll-behavior: smooth;
 }
 
 .header-bar .sections-wrapper ul li {
@@ -62,10 +63,14 @@
   flex-shrink: 0;
 }
 
-.header-bar .sections-wrapper ul li.active {
-  color: var(--color-text-light);
-  background-color: var(--color-text-dark);
-  border-radius: 360px;
+.header-bar .sections-wrapper ul div {
+  flex-shrink: 0;
+}
+
+.header-bar .sections-wrapper ul div:last-child {
+  min-width: 100vw;
+  display: flex;
+  align-items: center;
 }
 
 .header-bar {
@@ -130,13 +135,14 @@
   background-color: #fff;
   align-items: center;
   left: 0;
-  padding: 0 20px;
+  padding: 0 10px;
   width: 100%;
   z-index: 5;
 }
 
 .list-languages p {
   margin-right: 10px;
+  font-size: 11px;
 }
 
 .list-languages img {

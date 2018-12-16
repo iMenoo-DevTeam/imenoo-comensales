@@ -1,6 +1,11 @@
 body {
   font-family: var(--main-font);
   color: var(--color-text-dark);
+  scroll-behavior: smooth;
+}
+
+* {
+  scroll-behavior: smooth;
 }
 
 .fadeIn {

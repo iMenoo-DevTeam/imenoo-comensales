@@ -28,9 +28,11 @@
   <div class="sections-wrapper fadeIn" *ngIf="sectionsBar">
       <h3>{{restaurant.name}}</h3>
       <ul>
-        <li class="section-item" [ngClass]="{'active': section.activeSection}" *ngFor="let section of sections">
-          {{section.title}}
-        </li>
+        <div *ngFor="let section of sections">
+          <li class="section-item" (click)="scrollToSection(section.position)" [attr.section]="section.url" [@showAnimation]="section.status">
+            {{section.title}} {{section.activeSection}}
+          </li>
+        </div>
       </ul>
     </div>
 

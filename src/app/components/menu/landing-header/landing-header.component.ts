@@ -20,6 +20,10 @@ import { Restaurant } from 'src/app/shared/interfaces';
       state('small', style({ position: "relative", marginTop: '-25px', width: "80%", marginBottom: '0px'})),
       transition('grow => small', animate('100ms ease-in')),
       transition('small => grow', animate('300ms ease-out')),
+      state('active', style({ backgroundColor: '#4A4A4A', color: '#fff', borderRadius: '360px'})),
+      state('passive', style({ backgroundColor: '#fff', color: '#4A4A4A', borderRadius: '0px'})),
+      transition('active => passive', animate('500ms ease-in')),
+      transition('passive => active', animate('500ms ease-out')),
     ])
   ]
 })
@@ -34,7 +38,7 @@ showFilter = 'hideUp';
 allergens: Array<Object> = [ 
   {  title: 'Almendras', value: 'almond' },
   {  title: 'Cereales', value: 'celery', },
-  {  title: 'soja', value: 'soybean',   },
+  {  title: 'Soja', value: 'soybean',   },
   {  title: 'Sulfatos', value: 'sulfates' },
   {  title: 'Huevo', value: 'egg' },
   {  title: 'Leche', value: 'milk' },
@@ -60,8 +64,7 @@ sections = [];
   constructor() { }
 
   ngOnInit() {
-    this.sections = this.restaurant.menu[0].sections.map(section => { return {activeSection: false, title: section.title} });
-    this.sections[1].activeSection = true;
+    this.sections = this.restaurant.menu[0].sections.map(section => { return {title: section.title, url: section.url, active: section.active, position: section.position, status: 'passive' } });
   }
 
   addFilterAllergen(event, data) {
@@ -91,9 +94,42 @@ sections = [];
     this.newLanguage.emit(lang);
   }
 
-  @HostListener('window:scroll', ['$event'])
-  checkScroll() {
-    const scrollPosition = window.pageYOffset;
+  scrollToSection(position) {
+    window.scrollTo(0, position-130);
+  }
+
+  checkCurrentSection(scrollPosition) {
+    let headerHeight = 0;
+    const elementsforAnimation = document.querySelectorAll('.section');
+    const sectionsWrapper = <HTMLElement> document.querySelector('.sections-wrapper ul');
+    const headerElement = <HTMLElement> document.querySelector('.header-bar .sections-wrapper');
+    if(headerElement) { headerHeight = headerElement.clientHeight }
+    
+    for(let i=0; i<elementsforAnimation.length; i++) {
+      const elementPosition = <HTMLElement> elementsforAnimation[i];
+      const item = elementPosition.getAttribute('section');
+      this.sections.forEach((elem, i) => {
+        if(elem.url == item && elem.position !== elementPosition.offsetTop) elem.position = elementPosition.offsetTop;
+        if(scrollPosition+headerHeight+40 > elem.position) {
+          if(i+1 < this.sections.length) {
+            if(scrollPosition+headerHeight+40 < this.sections[i+1].position) {
+              elem.status = 'active'
+              let elemActivePosition = <HTMLElement> document.querySelector(`[section="${elem.url}"]`);
+              if(sectionsWrapper) sectionsWrapper.scrollTo(elemActivePosition.offsetLeft-24, 0);
+            } else {
+             elem.status = 'passive';
+            }
+          } else {
+            elem.status = 'active';
+            let elemActivePosition = <HTMLElement> document.querySelector(`[section="${elem.url}"]`);
+            if(sectionsWrapper) sectionsWrapper.scrollTo(elemActivePosition.offsetLeft-24, 0);
+          }
+        } else elem.status = 'passive'
+      })
+    }
+  }
+
+  showHeaderBar(scrollPosition) {
     const headerBar = document.getElementsByClassName('header-bar')[0];
     const headerLanding = document.getElementsByClassName('header-landing')[0];
     const elementHeader= <HTMLElement> headerBar;
@@ -108,6 +144,13 @@ sections = [];
       this.landingBar = true;
       this.sectionsBar = false;
     }
+  }
+
+  @HostListener('window:scroll', ['$event'])
+  checkScroll() {
+    const scrollPosition = window.pageYOffset;
+    this.showHeaderBar(scrollPosition);
+    this.checkCurrentSection(scrollPosition);
   }
 
 }

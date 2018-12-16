@@ -13,7 +13,7 @@
     </app-landing-header>
     <div class="menu-wrapper">
         <div class="section-wrapper" *ngFor="let section of restaurant.menu[0].sections">
-          <div *ngIf="section.dishes.length > 0" id="{{section.url}}">
+          <div *ngIf="section.dishes.length > 0" [attr.section]="section.url" class="section">
               <h3>{{section.title}}</h3>
               <div class="dish-wrapper" *ngFor="let dish of section.dishes; let i=index">
                   <app-dish-card [dish]="dish" [section]="section"></app-dish-card>

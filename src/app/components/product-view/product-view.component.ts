@@ -28,7 +28,7 @@ export class ProductViewComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log(this.dish)
+
   }
 
   closeProductView() {
