@@ -25,7 +25,9 @@
             "styles": [
               "src/styles/normalize.css",
               "src/styles/variables.css",
-              "src/styles/styles.css"
+              "src/styles/styles.css",
+              "src/styles/spinner.scss",
+              "src/styles/palette.scss"
             ],
             "scripts": []
           },

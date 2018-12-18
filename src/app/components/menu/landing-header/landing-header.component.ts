@@ -61,10 +61,21 @@ headerGrow = 'small';
 landingBar = true;
 sectionsBar = false;
 sections = [];
+checked: Boolean = false;
+canActivate: Boolean = false;
+canUseSwitch: Boolean = false;
+
   constructor() { }
 
   ngOnInit() {
     this.sections = this.restaurant.menu[0].sections.map(section => { return {title: section.title, url: section.url, active: section.active, position: section.position, status: 'passive' } });
+    if (this.checked) {
+      this.canUseSwitch = true;
+    } else if (!this.checked && this.canActivate) {
+      this.canUseSwitch = true;
+    } else {
+      this.canUseSwitch = false;
+    }
   }
 
   addFilterAllergen(event, data) {
@@ -92,6 +103,10 @@ sections = [];
   newLanguageSelected(lang) {
     this.showLanguages = 'hide';
     this.newLanguage.emit(lang);
+  }
+
+  switch() {
+    this.checked = !this.checked;
   }
 
   scrollToSection(position) {

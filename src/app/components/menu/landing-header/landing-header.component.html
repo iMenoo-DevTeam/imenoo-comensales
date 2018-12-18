@@ -12,9 +12,9 @@
     </div>
     <div class="language-wrapper" *ngIf="defaultLanguage" (click)="toggleLanguageSelector()">
         <img class="flag" src="assets/images/flags/{{defaultLanguage}}.svg">
-        <img class="arrowDown" src="assets/images/header/arrowDown.svg">
+        <img class="arrowDown" src="assets/images/header/arrowDown.svg" *ngIf="availableLanguages.length > 1">
     </div>
-    <div class="list-languages" [@showAnimation]="showLanguages">
+    <div class="list-languages" [@showAnimation]="showLanguages" *ngIf="availableLanguages.length > 1">
         <p>Idioma: </p>
         <div class="lang-item" *ngFor="let language of availableLanguages">
             <img class="flag" src="assets/images/flags/{{language}}.svg" (click)="newLanguageSelected(language)">
@@ -50,7 +50,12 @@
     <div class="items-wrapper">
       <div class="item" *ngFor="let allergen of allergens">
         <span>{{allergen.title}}</span>
-        <input type="checkbox" (change)="addFilterAllergen($event, allergen.value)">
+        <div class="switch-container" (click)="switch()">
+            <label class="switch" [ngClass]="{'cantActivate': !canUseSwitch}">
+              <input type="checkbox" [checked]="checked">
+              <span class="slider round"></span>
+            </label>
+        </div>
       </div>
     </div>
   </div>

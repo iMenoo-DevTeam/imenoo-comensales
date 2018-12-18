@@ -12,6 +12,7 @@ import { LandingHeaderComponent } from './components/menu/landing-header/landing
 import { FooterComponent } from './components/menu/footer/footer.component';
 import { SectionsNavComponent } from './components/menu/sections-nav/sections-nav.component';
 import { ProductViewComponent } from './components/product-view/product-view.component';
+import { SwitchComponent } from './shared/switch/switch.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { ProductViewComponent } from './components/product-view/product-view.com
     FooterComponent,
     SectionsNavComponent,
     ProductViewComponent,
+    SwitchComponent,
   ],
   imports: [
     BrowserModule,

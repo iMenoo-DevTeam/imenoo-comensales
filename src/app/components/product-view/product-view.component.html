@@ -69,7 +69,7 @@
         </div>
     
       </div>
-      <div class="able-for">
+      <div class="able-for" *ngIf="dish.diets.vegetarian || dish.diets.vegan">
         <p>Apto para:</p>
         <span *ngIf="dish.diets.vegetarian">Vegetarianos</span>
         <br>
