@@ -11,8 +11,7 @@ import { DishCardComponent } from './components/menu/dish-card/dish-card.compone
 import { LandingHeaderComponent } from './components/menu/landing-header/landing-header.component';
 import { FooterComponent } from './components/menu/footer/footer.component';
 import { SectionsNavComponent } from './components/menu/sections-nav/sections-nav.component';
-import { ProductViewComponent } from './components/product-view/product-view.component';
-import { SwitchComponent } from './shared/switch/switch.component';
+import { ProductViewComponent } from './components/product-view/product-view.component';;
 
 @NgModule({
   declarations: [
@@ -24,7 +23,6 @@ import { SwitchComponent } from './shared/switch/switch.component';
     FooterComponent,
     SectionsNavComponent,
     ProductViewComponent,
-    SwitchComponent,
   ],
   imports: [
     BrowserModule,
