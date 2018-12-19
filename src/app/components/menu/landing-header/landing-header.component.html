@@ -35,7 +35,10 @@
         </div>
       </ul>
     </div>
-
+</div>
+<div class="filters-wrapper" *ngIf="filtersToDisplayAllergens.length > 0 || filtersToDisplayDiets.length > 0">
+    <p *ngFor="let element of filtersToDisplayAllergens" (click)="showFilterSelector()">Sin {{element}}</p>
+    <p *ngFor="let element of filtersToDisplayDiets" (click)="showFilterSelector()">{{element}}</p>
 </div>
 
 <div class="filter-items-wrapper" [@showAnimation]="showFilter">
@@ -50,9 +53,9 @@
     <div class="items-wrapper">
       <div class="item" *ngFor="let allergen of allergens">
         <span>{{allergen.title}}</span>
-        <div class="switch-container" (click)="switch()">
+        <div class="switch-container" (click)="switchAllergen(allergen)">
             <label class="switch" [ngClass]="{'cantActivate': !canUseSwitch}">
-              <input type="checkbox" [checked]="checked">
+              <input type="checkbox" [checked]="allergen.switch">
               <span class="slider round"></span>
             </label>
         </div>
@@ -65,7 +68,12 @@
       <div class="items-wrapper">
         <div class="item" *ngFor="let diet of dietary">
           <span>{{diet.title}}</span>
-          <input type="checkbox" (change)="addFilterDiet($event, diet.value)">
+          <div class="switch-container" (click)="switchDiet(diet)">
+              <label class="switch" [ngClass]="{'cantActivate': !canUseSwitch}">
+                <input type="checkbox" [checked]="diet.switch">
+                <span class="slider round"></span>
+              </label>
+          </div>
         </div>
       </div>
     </div>

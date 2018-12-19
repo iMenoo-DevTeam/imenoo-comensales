@@ -186,6 +186,25 @@
   margin-right: 20px;
 }
 
+.filters-wrapper {
+  width: 100%;
+  box-sizing: border-box;
+    padding: 10px;
+    border-bottom: 1px solid rgba(187, 187, 187, 0.582);
+    display: flex;
+    overflow-x: scroll;
+}
+
+.filters-wrapper p {
+  font-size: 11px;
+  border-radius: 4px;
+  background-color: #2e9999;
+  color: #fff;
+  padding: 5px 10px;
+  margin-right: 15px;
+  flex-shrink: 0;
+}
+
 .filter-items-wrapper img#close-icon {
   position: absolute;
   top: 5vh;

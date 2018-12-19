@@ -35,28 +35,31 @@ export class LandingHeaderComponent implements OnInit {
 @Output() filters: EventEmitter<any> = new EventEmitter();
 showLanguages = 'hide';
 showFilter = 'hideUp';
-allergens: Array<Object> = [ 
-  {  title: 'Almendras', value: 'almond' },
-  {  title: 'Cereales', value: 'celery', },
-  {  title: 'Soja', value: 'soybean',   },
-  {  title: 'Sulfatos', value: 'sulfates' },
-  {  title: 'Huevo', value: 'egg' },
-  {  title: 'Leche', value: 'milk' },
-  {  title: 'Gluten', value: 'gluten' },
-  {  title: 'Maní', value: 'peanut' },
-  {  title: 'Sésamo', value: 'sesame' },
-  {  title: 'Mostaza', value: 'mustard' },
-  {  title: 'Molusco', value: 'mollusc' },
-  {  title: 'Lupin', value: 'lupin' },
-  {  title: 'Crustáceo', value: 'crustaceans' },
-  {  title: 'Pescado', value: 'fish' },
+allergens: Array<any> = [ 
+  {  title: 'Almendras', switch: false, value: 'almond' },
+  {  title: 'Cereales', switch: false, value: 'celery', },
+  {  title: 'Soja', switch: false, value: 'soybean',   },
+  {  title: 'Sulfatos', switch: false, value: 'sulfates' },
+  {  title: 'Huevo', switch: false, value: 'egg' },
+  {  title: 'Leche', switch: false, value: 'milk' },
+  {  title: 'Gluten', switch: false, value: 'gluten' },
+  {  title: 'Maní', switch: false, value: 'peanut' },
+  {  title: 'Sésamo', switch: false, value: 'sesame' },
+  {  title: 'Mostaza', switch: false, value: 'mustard' },
+  {  title: 'Molusco', switch: false, value: 'mollusc' },
+  {  title: 'Lupin', switch: false, value: 'lupin' },
+  {  title: 'Crustáceo', switch: false, value: 'crustaceans' },
+  {  title: 'Pescado', switch: false, value: 'fish' },
 ]
-dietary: Array<Object> = [ 
-  {  title: 'Vegano', value: 'vegan' },
-  {  title: 'Vegetariano', value: 'vegetarian' },
+
+dietary: Array<any> = [ 
+  {  title: 'Vegano', switch: false, value: 'vegan' },
+  {  title: 'Vegetariano', switch: false, value: 'vegetarian' },
 ]
 allergensFilter: Array<String> = [];
 dietsFilter: Array<String> = [];
+filtersToDisplayAllergens: Array<String> = [];
+filtersToDisplayDiets: Array<String> = [];
 headerGrow = 'small';
 landingBar = true;
 sectionsBar = false;
@@ -78,14 +81,27 @@ canUseSwitch: Boolean = false;
     }
   }
 
-  addFilterAllergen(event, data) {
-    event.target.checked ? this.allergensFilter.push(data) : this.allergensFilter = this.allergensFilter.filter(allergen => allergen != data)
-    this.filters.emit({allergens: this.allergensFilter, diets: this.dietsFilter});
+  addFilterAllergen(elem) {
+   elem.switch ? this.allergensFilter.push(elem.value) : this.allergensFilter = this.allergensFilter.filter(allergen => allergen != elem.value);
+   this.filters.emit({allergens: this.allergensFilter, diets: this.dietsFilter});
+   this.addFiltersToDisplay();
   }
 
-  addFilterDiet(event, data) {
-    event.target.checked ? this.dietsFilter.push(data) : this.dietsFilter = this.dietsFilter.filter(diet => diet != data);
+  addFilterDiet(elem) {
+    elem.switch ? this.dietsFilter.push(elem.value) : this.dietsFilter = this.dietsFilter.filter(diet => diet != elem.value);
     this.filters.emit({allergens: this.allergensFilter, diets: this.dietsFilter});
+    this.addFiltersToDisplay();
+  }
+
+  addFiltersToDisplay() {
+    this.filtersToDisplayAllergens = [];
+    this.filtersToDisplayDiets = [];
+    this.allergens.forEach(elem => {
+      if(elem.switch) this.filtersToDisplayAllergens.push(elem.title)
+    });
+    this.dietary.forEach(elem => {
+      if(elem.switch) this.filtersToDisplayDiets.push(elem.title)
+    });
   }
 
   toggleLanguageSelector() {
@@ -105,8 +121,16 @@ canUseSwitch: Boolean = false;
     this.newLanguage.emit(lang);
   }
 
-  switch() {
-    this.checked = !this.checked;
+  switchAllergen(elem) {
+    let switchElemt = this.allergens.filter(filterElem => filterElem.title == elem.title);
+    switchElemt[0].switch = !switchElemt[0].switch;
+    this.addFilterAllergen(switchElemt[0]);
+  }
+
+  switchDiet(elem) {
+    let switchElemt = this.dietary.filter(filterElem => filterElem.title == elem.title);
+    switchElemt[0].switch = !switchElemt[0].switch;
+    this.addFilterDiet(switchElemt[0]);
   }
 
   scrollToSection(position) {
