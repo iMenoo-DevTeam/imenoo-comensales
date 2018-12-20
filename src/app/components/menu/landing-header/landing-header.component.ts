@@ -12,6 +12,10 @@ import { Restaurant } from 'src/app/shared/interfaces';
       state('hide', style({ display: "none", opacity: 0, transform: "translateX(+5%)"})),
       transition('show => hide', animate('300ms ease-in')),
       transition('hide => show', animate('300ms ease-out')),
+      state('showSearch', style({ display: "flex", opacity: 1, transform: "translateY(0)"})),
+      state('hideSearch', style({ display: "none", opacity: 0, transform: "translateY(+20%)"})),
+      transition('showSearch => hideSearch', animate('300ms ease-in')),
+      transition('hideSearch => showSearch', animate('300ms ease-out')),
       state('showUp', style({ display: "block", opacity: 1, transform: "translateY(0)"})),
       state('hideUp', style({ display: "none", opacity: 0, transform: "translateY(-10%)"})),
       transition('showUp => hideUp', animate('300ms ease-in')),
@@ -33,8 +37,10 @@ export class LandingHeaderComponent implements OnInit {
 @Input() availableLanguages: String;
 @Output() newLanguage: EventEmitter<any> = new EventEmitter();
 @Output() filters: EventEmitter<any> = new EventEmitter();
+@Output() search: EventEmitter<any> = new EventEmitter();
 showLanguages = 'hide';
 showFilter = 'hideUp';
+showSearch = 'hideSearch';
 allergens: Array<any> = [ 
   {  title: 'Almendras', switch: false, value: 'almond' },
   {  title: 'Cereales', switch: false, value: 'celery', },
@@ -62,6 +68,7 @@ filtersToDisplayAllergens: Array<String> = [];
 filtersToDisplayDiets: Array<String> = [];
 headerGrow = 'small';
 landingBar = true;
+searchTerm = '';
 sectionsBar = false;
 sections = [];
 checked: Boolean = false;
@@ -71,7 +78,7 @@ canUseSwitch: Boolean = false;
   constructor() { }
 
   ngOnInit() {
-    this.sections = this.restaurant.menu[0].sections.map(section => { return {title: section.title, url: section.url, active: section.active, position: section.position, status: 'passive' } });
+    this.sections = this.restaurant.menu[0].sections.map(section => { if(section.dishes.length > 0) return {title: section.title, url: section.url, active: section.active, position: section.position, status: 'passive' } });
     if (this.checked) {
       this.canUseSwitch = true;
     } else if (!this.checked && this.canActivate) {
@@ -112,6 +119,15 @@ canUseSwitch: Boolean = false;
     this.showFilter = 'showUp'
   }
 
+  showSearchBar() {
+    this.showSearch = 'showSearch';
+  }
+
+  hideSearchBar() {
+    this.searchTerm = '';
+    this.showSearch = 'hideSearch';
+  }
+
   hideFilterSelector() {
     this.showFilter = 'hideUp'
   }
@@ -135,6 +151,11 @@ canUseSwitch: Boolean = false;
 
   scrollToSection(position) {
     window.scrollTo(0, position-130);
+  }
+
+  getSearchValue(event) {
+    this.searchTerm = event.target.value;
+    this.search.emit(this.searchTerm);
   }
 
   checkCurrentSection(scrollPosition) {

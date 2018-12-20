@@ -140,6 +140,43 @@
   z-index: 5;
 }
 
+.search-bar {
+  position: absolute;
+  display: flex;
+  height: 100%;
+  box-sizing: border-box;
+  top: 0;
+  background-color: #fff;
+  align-items: center;
+  left: 0;
+  padding: 0 10px;
+  width: 100%;
+  z-index: 5;
+  padding-bottom: 10px;
+    align-items: flex-end;
+}
+
+.search-bar input {
+  width: 100%;
+  padding-bottom: 3px;
+  font-weight: 300;
+  border-bottom: 1px solid rgba(192, 192, 192, 0.541);
+}
+
+.search-bar .search-icon-bar {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  width: 20px 
+}
+
+.search-bar .search-close-icon {
+  position: absolute;
+  right: 12px;
+  top: 17px;
+  width: 15px;
+}
+
 .list-languages p {
   margin-right: 10px;
   font-size: 11px;

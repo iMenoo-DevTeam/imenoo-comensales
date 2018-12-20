@@ -4,7 +4,8 @@
 
 <div class="content-wrapper" *ngIf="restaurant">
     <app-landing-header 
-        (filters)="setFilters($event)" 
+        (filters)="setFilters($event)"
+        (search)="searchProduct($event)"
         (newLanguage)="setNewLanguage($event)" 
         [restaurant]="restaurant" 
         [defaultLanguage]="defaultLanguage" 

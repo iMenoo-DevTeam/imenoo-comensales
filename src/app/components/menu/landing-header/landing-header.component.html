@@ -6,9 +6,13 @@
 </div>
 <div class="header-bar" [@showAnimation]="headerGrow">
   <div class="landing-header-bar-wrapper fadeIn" *ngIf="landingBar">
-    <div class="search-wrapper">
+    <div class="search-wrapper" (click)="showSearchBar()">
         <img src="assets/images/header/search.svg" alt="">
       <p>Buscar</p>
+    </div>
+    <div class="search-bar" [@showAnimation]="showSearch">
+      <img src="assets/images/header/cancel.svg" alt="" class="search-close-icon" (click)="hideSearchBar()">
+      <input type="text" (keyup)="getSearchValue($event)" [value]="searchTerm" autofocus>
     </div>
     <div class="language-wrapper" *ngIf="defaultLanguage" (click)="toggleLanguageSelector()">
         <img class="flag" src="assets/images/flags/{{defaultLanguage}}.svg">

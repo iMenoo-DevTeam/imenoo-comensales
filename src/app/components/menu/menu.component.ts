@@ -26,6 +26,7 @@ export class MenuComponent implements OnInit {
   allergensFilter = [];
   dietsFilter = [];
   showHeader = 'show';
+  searchKeyword: any = new RegExp('', "gi");
 
   constructor(
     public router: Router,
@@ -78,7 +79,7 @@ export class MenuComponent implements OnInit {
           };
           this.allergensFilter.forEach(allergen => { if(newDish.allergens[allergen]) newDish.flagAllergens = false; })
           this.dietsFilter.forEach(diet => { if(!newDish.diets[diet]) newDish.flagDiets = false; })
-          if(newDish.flagAllergens && newDish.flagDiets) newSection.dishes.push(newDish);
+          if(newDish.flagAllergens && newDish.flagDiets && (this.searchKeyword.test(newDish.title))) newSection.dishes.push(newDish);
         })
         return newSection;
       })
@@ -95,6 +96,11 @@ export class MenuComponent implements OnInit {
   setFilters(filters) {
     this.allergensFilter = filters.allergens;
     this.dietsFilter = filters.diets;
+    this.restaurant = this.filterLanguage(this.rawRestaurant);
+  }
+
+  searchProduct(word) {
+    this.searchKeyword = new RegExp(word, "gi");
     this.restaurant = this.filterLanguage(this.rawRestaurant);
   }
 
